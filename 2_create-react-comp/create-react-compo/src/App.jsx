@@ -10,6 +10,7 @@ function App(){
     < Random color="blue"/>
     < Random color="orange"/>
     < Random color="grey"/>
+    
   </div>
 }
 export default App; 
