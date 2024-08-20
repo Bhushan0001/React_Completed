@@ -1,6 +1,6 @@
 import AppName from "./components/AppName"
 import AddTodo from "./components/AddTodo"
-import TodoItem from "./components/TodoItems"
+import TodoItems from "./components/TodoItems"
 
 function App() {
   const todo = [{
@@ -11,11 +11,17 @@ function App() {
   name: "Goto College", 
   dueDate: "4/9/2024"
 }]
+let [Item,setItem] = useState([{}])
+let handleItems = () =>{
+  let newItem = []
+  
+}
+
   return <>
     <center className="todo-container">
       <AppName/>
-      <AddTodo/>
-      <TodoItem todos={todo}/>
+      <AddTodo handleItems={handleItems}/>
+      <TodoItems todos={todo}/>
       </center>
   </>
 
