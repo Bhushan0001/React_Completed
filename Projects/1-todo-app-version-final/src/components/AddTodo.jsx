@@ -1,6 +1,8 @@
-import {useRef} from 'react'
+import {useContext, useRef} from 'react'
 import { IoAddCircleSharp } from "react-icons/io5";
-function AddTodo({onNewItems }) {
+import { TodoItemsContext } from '../store/todo-items-store';
+function AddTodo() {
+  let {addNewItem} = useContext(TodoItemsContext)
   let todoNameUpdate = useRef()
   let todoDateUpdate = useRef()
 
@@ -10,7 +12,7 @@ function AddTodo({onNewItems }) {
     let todoDate = todoDateUpdate.current.value
     todoNameUpdate.current.value = ""
     todoDateUpdate.current.value = ""
-    onNewItems(todoName, todoDate)
+    addNewItem(todoName, todoDate)
  }
   return (
     <div className="container">
